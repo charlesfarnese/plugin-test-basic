@@ -5,7 +5,7 @@ const e = React.createElement;
 class LikeButton extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { liked: false, data: 'no data' };
+    this.state = { liked: false, data: {conversation: {id: 'no data'}} };
   }
 
   componentDidMount() {
@@ -23,10 +23,7 @@ class LikeButton extends React.Component {
     return (
       <>
       <h3>Legacy Plugin</h3>
-      { this.state.data !== 'no data' ?
-        <div>{`event data --> ${this.state.data.conversation.id}`}</div>
-      :
-      <div>{`event data --> ${this.state.data}`}</div>}
+      {<div>{`event data --> ${this.state.data.conversation.id}`}</div>}
     </>
     );
 
