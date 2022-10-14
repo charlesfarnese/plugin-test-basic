@@ -9,7 +9,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>{this.props.conversation-id}</div>
+      <div>{this.props.conversation_id}</div>
     );
   }
 }
@@ -28,11 +28,9 @@ class LegacyPlugin extends React.Component {
   }
 
   render() {
-    return e(
-      <App/>,
-      {conversation_id: this.state.conversation_id}
-    );
-    
+    return(
+      <App conversation_id={this.state.conversation_id}/>
+    )
   }
 }
 
