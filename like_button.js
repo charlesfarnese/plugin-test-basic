@@ -5,7 +5,7 @@ const e = React.createElement;
 class LikeButton extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { liked: false, data: {conversation: {id: 'no data'}} };
+    this.state = { liked: false, data: 'no data' };
   }
 
   componentDidMount() {
