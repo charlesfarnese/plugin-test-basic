@@ -21,10 +21,10 @@ class LikeButton extends React.Component {
     }
 
     return (
-      <>
-      <h3>Legacy Plugin</h3>
-      {<div>{`event data --> ${this.state.data.conversation.id}`}</div>}
-    </>
+      <div>
+        <h3>Legacy Plugin</h3>
+        {<div>{`event data --> ${this.state.data.conversation.id}`}</div>}
+      </div>
     );
 
   }
