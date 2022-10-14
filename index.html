@@ -11,6 +11,8 @@
         console.log("Event data --> ", data);
         frontData = data;
         conversationId = data.conversation.id;
+        var div = document.getElementById('nr_conv_id');
+        div.innerHTML += conversationId;
       });
     </script>
   </head>
@@ -18,6 +20,10 @@
 
     <!-- We will put our React component inside this div. -->
     <div id="app"></div>
+    <div id="nr-app">
+      <p>Non react data:</p>
+      <div id="nr_conv_id"></div>
+    </div>
 
     <!-- Load React. -->
     <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
