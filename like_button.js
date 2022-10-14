@@ -23,7 +23,7 @@ class LikeButton extends React.Component {
     return e(
       'div',
       { onClick: () => this.setState({ liked: true }) },
-      this.state.data
+      this.state.data.conversation.id
     );
   }
 }
