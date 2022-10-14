@@ -5,7 +5,7 @@ const e = React.createElement;
 class LikeButton extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {data: 'no data'};
+    this.state = {data: null};
   }
 
   componentDidMount() {
@@ -19,7 +19,7 @@ class LikeButton extends React.Component {
     return e(
       'div',
       {},
-      this.state.data.conversation.id
+      'test'
     );
     
   }
