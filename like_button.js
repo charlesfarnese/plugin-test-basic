@@ -2,10 +2,24 @@
 
 const e = React.createElement;
 
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div>
+        {this.props.data.conversation.id}
+      </div>
+    )
+}
+}
+
 class LikeButton extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { liked: false, data: 'no data' };
+    this.state = { liked: false, data: 'no data'};
   }
 
   componentDidMount() {
@@ -20,13 +34,11 @@ class LikeButton extends React.Component {
       return 'You liked this.';
     }
 
-    return (
-      <div>
-        <h3>Legacy Plugin</h3>
-        {<div>{`event data --> ${this.state.data.conversation.id}`}</div>}
-      </div>
+    return e(
+      <App/>,
+      { onClick: () => this.setState({ liked: true }), data: this.state.data}
     );
-
+    
   }
 }
 
