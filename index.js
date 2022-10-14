@@ -1,39 +1,60 @@
 'use strict';
 
-const e = React.createElement;
+// const e = React.createElement;
 
-class App extends React.Component {
+// class LikeButton extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {data: null};
+//   }
+
+//   componentDidMount() {
+//     window.Front.on("conversation", (data) => {
+//       console.log("Event data --> ", data);
+//       this.setState({data: data});
+//     });
+//   }
+
+//   render() {
+//     return e(
+//       'div',
+//       {},
+//       'test'
+//     );
+
+//   }
+// }
+
+class RootComponent extends React.Component {
+
   constructor(props) {
     super(props);
-  }
-
-  render() {
-    return (
-      <div>{this.props.conversation_id}</div>
-    );
-  }
-}
-
-class LegacyPlugin extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {data: null, conversation_id: 'unknown'};
+    this.state = {data: null};
   }
 
   componentDidMount() {
     window.Front.on("conversation", (data) => {
       console.log("Event data --> ", data);
-      this.setState({data: data, conversation_id: data.conversation.id});
+      this.setState({data: data});
     });
   }
 
-  render() {
-    return(
-      <App conversation_id={this.state.conversation_id}/>
-    )
+  render(){
+      return (<div>
+          <MyComponent />
+      </div>);
+  }
+}
+
+class MyComponent extends React.Component {
+  render(){
+      return (<div>This is a simple component</div>);
   }
 }
 
 const domContainer = document.querySelector('#app');
-const root = ReactDOM.createRoot(domContainer);
-root.render(e(LegacyPlugin));
+ReactDOM.render( React.createElement(RootComponent), domContainer );
+
+// const domContainer = document.querySelector('#app');
+// const root = ReactDOM.createRoot(domContainer);
+// root.render(e(LikeButton));
