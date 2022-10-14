@@ -20,11 +20,13 @@ class LikeButton extends React.Component {
       return 'You liked this.';
     }
 
-    return e(
-      'div',
-      { onClick: () => this.setState({ liked: true }) },
-      this.state.data.conversation.id
+    return (
+      <>
+      <h3>Legacy Plugin</h3>
+      {eventData && <div>{`event data --> ${this.state.data.conversation.id}`}</div>}
+    </>
     );
+
   }
 }
 
