@@ -29,7 +29,7 @@ class LegacyPlugin extends React.Component {
 
   render() {
     return(
-      <App conversation_id={this.state.conversation_id}/>
+      <App conversation_id={window.conversationId}/>
     )
   }
 }

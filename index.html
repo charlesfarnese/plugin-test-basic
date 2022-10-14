@@ -17,6 +17,15 @@
     <script src="https://dl.frontapp.com/libs/frontjs.min.js"></script>
 
     <!-- Load our React component. -->
+    <script type="application/javascript">
+      var frontData = null;
+      var conversationId = null;
+      window.Front.on("conversation", (data) => {
+        console.log("Event data --> ", data);
+        frontData = data;
+        conversationId = data.conversation.id;
+      });
+    </script>
     <script src="index.js" type="text/babel"></script>
 
   </body>
